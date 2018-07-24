@@ -1,0 +1,21 @@
+From: Bodo-Merle Sandor <sbodomerle@gmail.com>
+Date: Tue, 30 Aug 2016 20:21:51 +0200
+Subject: Use jquery from the archive
+
+---
+ doc/_templates/index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/doc/_templates/index.html b/doc/_templates/index.html
+index acbf487..5fa9a30 100644
+--- a/doc/_templates/index.html
++++ b/doc/_templates/index.html
+@@ -1,7 +1,7 @@
+ {% extends "layout.html" %}
+ {% set title = 'PyTango documentation' %}
+ 
+-{% set script_files = script_files + ["http://code.jquery.com/jquery-1.9.1.min.js",
++{% set script_files = script_files + ["_static/jquery.js",
+                                       "_static/jssor.js",
+                                       "_static/jssor.slider.js",
+                                       "_static/gallery.js", ] %}

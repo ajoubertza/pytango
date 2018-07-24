@@ -1,0 +1,101 @@
+Source: pytango
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Picca Frédéric-Emmanuel <picca@debian.org>,
+           Sandor Bodo-Merle <sbodomerle@gmail.com>
+Section: science
+Priority: optional
+Build-Depends: debhelper (>= 10),
+               dh-python,
+               graphviz <!nodoc>,
+               libboost-python-dev,
+               libtango-dev,
+               pkg-config,
+               python-all-dev,
+               python-concurrent.futures <!nodoc>,
+               python-gevent <!nodoc>,
+               python-numpy,
+               python-setuptools,
+               python-six,
+               python-sphinx <!nodoc>,
+               python-sphinx-rtd-theme <!nodoc>,
+               python3-all-dev,
+               python3-gevent <!nodoc>,
+               python3-numpy,
+               python3-setuptools,
+               python3-six,
+               python3-sphinx <!nodoc>,
+               python3-sphinx-rtd-theme <!nodoc>,
+               sphinx-common
+Standards-Version: 4.1.4
+Vcs-Browser: https://salsa.debian.org/science-team/pytango
+Vcs-Git: https://salsa.debian.org/science-team/pytango.git
+Homepage: http://www.tango-controls.org/static/PyTango/latest/doc/html/
+Rules-Requires-Root: no
+
+Package: python-pytango
+Architecture: any
+Section: oldlibs
+Depends: python-tango,
+         ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: transitional dummy package for python-tango
+ This is a transitional package to ease upgrades to the
+ python-tango package. It can be safely removed.
+
+Package: python-tango
+Architecture: any
+Section: python
+Depends: ${misc:Depends},
+         ${python:Depends},
+         ${shlibs:Depends}
+Provides: ${python:Provides}
+Description: API for the TANGO control system (Python 2)
+ TANGO is an object oriented distributed control system using CORBA,
+ mainly developed by the Controls Section of the ALBA Synchrotron.
+ PyTango provides bindings for its client- and server-side C++ APIs.
+ With PyTango, you can write TANGO device servers and TANGO applications
+ (scripts, CLIs, GUIs) that access TANGO device servers in pure Python.
+ .
+ This is the Python 2 version of the package.
+
+Package: python3-pytango
+Architecture: any
+Section: oldlibs
+Depends: python3-tango,
+         ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: transitional dummy package for python3-tango
+ This is a transitional package to ease upgrades to the
+ python3-tango package. It can be safely removed.
+
+Package: python3-tango
+Architecture: any
+Section: python
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         ${shlibs:Depends}
+Provides: ${python3:Provides}
+Description: API for the TANGO control system (Python 3)
+ TANGO is an object oriented distributed control system using CORBA,
+ mainly developed by the Controls Section of the ALBA Synchrotron.
+ PyTango provides bindings for its client- and server-side C++ APIs.
+ With PyTango, you can write TANGO device servers and TANGO applications
+ (scripts, CLIs, GUIs) that access TANGO device servers in pure Python.
+ .
+ This is the Python 3 version of the package.
+
+Package: python-tango-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends},
+         ${sphinxdoc:Depends}
+Breaks: python-pytango-doc (<< 9.2.0-2~)
+Replaces: python-pytango-doc (<< 9.2.0-2~)
+Description: API for the TANGO control system
+ TANGO is an object oriented distributed control system using CORBA,
+ mainly developed by the Controls Section of the ALBA Synchrotron.
+ PyTango provides bindings for its client- and server-side C++ APIs.
+ With PyTango, you can write TANGO device servers and TANGO applications
+ (scripts, CLIs, GUIs) that access TANGO device servers in pure Python.
+ .
+ This package contains the documentation for the python-tango library.

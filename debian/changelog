@@ -1,0 +1,272 @@
+pytango (9.2.3-1) unstable; urgency=medium
+
+  [ Bodo-Merle Sandor ]
+  * New upstream version 9.2.3
+  * debian/patches
+    - Refresh patch 0002-Use-jquery-from-the-archive
+  * debian/control
+    - cme fix dpkg
+    - Rules-Requires-Root: no
+    - depend on sphinx_rtd_theme
+    - remove outdated X-Python{,3}-Version fields
+  * debian/watch
+    - update regexp; switch to https
+
+ -- Sandor Bodo-Merle <sbodomerle@gmail.com>  Sat, 02 Jun 2018 16:25:59 +0200
+
+pytango (9.2.2-1) unstable; urgency=medium
+
+  [ Bodo-Merle Sandor ]
+  * New upstream version 9.2.2
+  * Bump Standards-Version to 4.1.0 (extra -> optional)
+  * debian/control
+    - wrap-and-sort -st
+  * debian/copyright
+    - Switched source URL to https
+  * debian/rules
+    - Built the documentation with python3
+    - Install examples
+  * debian/patch
+    - drop 0001-Use-loose-version-instead-of-strict-version-for-comp.patch
+
+  [ Picca Frédéric-Emmanuel ]
+  * debian/control
+    - add nodoc profile dependencies
+    - Added: python-sphinx, sphinx-common
+  * debian/patches
+    - Added 0002-deal-with-sphinx-only-via-the-debian-rules.patch
+  * debian/rules
+    - Reworked in order to support nodoc
+    - dh_sphinxdoc is now mandatory.
+    - Build the documentation also with python.
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Sun, 29 Oct 2017 08:22:04 +0100
+
+pytango (9.2.1-1) unstable; urgency=medium
+
+  * debian/patch
+    - apply upstream patch to fix gcc-7 compilation (Closes: #853624)
+  * Bump Standards-Version to 4.0.0, no changes.
+
+ -- Sandor Bodo-Merle <sbodomerle@gmail.com>  Mon, 07 Aug 2017 18:27:13 +0200
+
+pytango (9.2.1-1~exp1) experimental; urgency=medium
+
+  * Import Upstream version 9.2.1
+  * debian/patch
+    - drop 0001-correct-typo-s-lenght-length.patch (aplied upstream)
+  * Use compat level 10 (Closes: #843728)
+
+ -- Sandor Bodo-Merle <sbodomerle@gmail.com>  Tue, 31 Jan 2017 12:56:49 +0100
+
+pytango (9.2.0-2) unstable; urgency=medium
+
+  * Add Breaks and Replace for python-pytango-doc (Closes: #836859)
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Thu, 03 Nov 2016 11:22:02 +0100
+
+pytango (9.2.0-1) unstable; urgency=medium
+
+  * Uploaded into Unstable
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Mon, 31 Oct 2016 11:22:02 +0100
+
+pytango (9.2.0-1~exp2) experimental; urgency=medium
+
+  * Fixed d/rules to call --with sphinxdoc only when building arch-all
+    packages.
+  * Updated the d/copyright (Add the ESRF)
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Sun, 04 Sep 2016 11:22:02 +0200
+
+pytango (9.2.0-1~exp1) experimental; urgency=medium
+
+  * Imported Upstream version 9.2.0
+    - Filter out sourceless binary executable: examples/many/many_client
+  * debian/patch
+    - Drop unnecessary patch 0001-Fix-syntax-error-in-python-3.patch
+    - Add 0001-Fix-syntax-error-in-python-3.patch - spelling fix
+    - 0002-Use-jquery-from-the-archive.patch - fix jquery reference
+  * debian/control
+    - Update build depends:
+      - add: python-six, python-gevent, python-concurrent.futures, libtango-dev
+    - Rename package pytango=>tango; add transitional packages
+    - Standards-Version bump to 3.9.8 (nothing to do)
+    - Updated the Vcs-X (git -> https)
+  * Ship extra pydist files so dependent packages will use the correct
+    python-tango dependency
+  * Drop itango deps for now - until a separate itango package is made
+  * debian/rules
+    - Build with pybuild
+  * Add myself to uploaders
+
+ -- Sandor Bodo-Merle <sbodomerle@gmail.com>  Fri, 26 Aug 2016 11:15:20 +0200
+
+pytango (8.1.8-2) unstable; urgency=medium
+
+  * debian/patches
+    - 0001-Fix-syntax-error-in-python-3.patch (Closes: #814824)
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Sun, 21 Feb 2016 14:03:38 +0100
+
+pytango (8.1.8-1) unstable; urgency=medium
+
+  * Imported Upstream version 8.1.8
+  * debian/patch
+    - 0001-fix-compilation-with-python3.4.patch (deleted, applyed upstream)
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Sat, 13 Feb 2016 16:19:55 +0100
+
+pytango (8.1.6-1) unstable; urgency=medium
+
+  * debian/control
+    - Build-deps: libtango8-dev (>= 8.1.2c+dfsg-7~) (Closes: #797284)
+  * debian/patch
+    - 0001-fix-compilation-with-python3.4.patch
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Thu, 03 Sep 2015 18:23:34 +0100
+
+pytango (8.1.6-1~exp1) experimental; urgency=medium
+
+  * Imported Upstream version 8.1.6
+  * debian/watch
+    - Use the pypi.debian.net redirector
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Mon, 09 Feb 2015 18:23:34 +0100
+
+pytango (8.1.5-1) unstable; urgency=medium
+
+  * Imported Upstream version 8.1.5
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Wed, 01 Oct 2014 11:55:00 +0200
+
+pytango (8.1.4-1) unstable; urgency=medium
+
+  * Imported Upstream version 8.1.4
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Tue, 30 Sep 2014 20:38:16 +0200
+
+pytango (8.1.1-1) unstable; urgency=low
+
+  * Imported Upstream version 8.1.1
+  * debian/patch
+    - 0001-fix-from-upstream-FTBFS-s390.patch (applyed by upstream)
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Wed, 27 Nov 2013 20:27:22 +0100
+
+pytango (8.0.3-3) unstable; urgency=low
+
+  * debian/control
+    - Build-Depends: remove log4tango4 which is not a direct build dependency.
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Sun, 25 Aug 2013 09:17:58 +0200
+
+pytango (8.0.3-2) unstable; urgency=low
+
+  * debian/patch
+    + 0001-fix-from-upstream-FTBFS-s390.patch (Closes: #711761)
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Sun, 21 Jul 2013 08:48:11 +0200
+
+pytango (8.0.3-1) unstable; urgency=low
+
+  * Imported Upstream version 8.0.3
+  * Bump Standards-Version 3.9.4 (nothing to do)
+  * Switch to debhelper level 9
+  * debian/rules
+    - updated the clean target to build twice.
+  * debian/patches
+    - 0001-feature-forwarded-fix-FTBFS-with-sphinx-beta-version.patch (deleted)
+      this patch was applyed by the upstream
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Mon, 20 May 2013 22:05:20 +0200
+
+pytango (8.0.2-1) unstable; urgency=low
+
+  * debian/patches
+    + 0001-feature-forwarded-fix-FTBFS-with-sphinx-beta-version.patch
+      (Closes: #706471)
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Tue, 07 May 2013 09:28:11 +0200
+
+pytango (8.0.2-1~exp1) experimental; urgency=low
+
+  * Imported Upstream version 8.0.2
+  * debian/control
+    - add python3-pytango binary package
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Fri, 21 Sep 2012 21:48:10 +0200
+
+pytango (7.2.3-2) unstable; urgency=low
+
+  * debian/rules
+    - use dh_sphinxdoc only for the doc package (Closes: #670955)
+  * debian/control
+    - add Build-Depends-Indep
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Tue, 01 May 2012 18:08:18 +0200
+
+pytango (7.2.3-1) unstable; urgency=low
+
+  * Imported Upstream version 7.2.3
+  * debian/control
+    - add the python-pytango-doc package
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Fri, 25 Apr 2012 20:50:02 +0100
+
+pytango (7.2.2-3) unstable; urgency=low
+
+  * bump the Standards-Version to 3.9.3
+    - use the copyright format 1.0
+  * dpkg/rules
+    - updated to build on squeeze
+  * dpkg/control
+    - better dependencies thanks to cme (config-edit)
+    - X-Python-Version: >= 2.5 ->  2.6
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Sun, 26 Feb 2012 14:49:19 +0100
+
+pytango (7.2.2-2) unstable; urgency=low
+
+  * use dh_numpy for better python-numpy dependency.
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Sun, 29 Jan 2012 11:32:31 +0100
+
+pytango (7.2.2-1) unstable; urgency=low
+
+  * import 7.2.2 upstream version. (Closes: #636468)
+  * use dh_sphinxdoc
+  * debian/control
+    - Build-Depends
+      - python-sphinx (>= 1.0.7+dfsg)
+    - add the Vcs- fields
+    - follow Debian Science policy for Maintainers
+  * debian/copyright fixed using config-edit
+  * debian/patches
+    - remove all patches thanks to the --install-html option.
+  * use pyinstall file to install the ipython profile.
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Mon, 12 Dec 2011 18:05:59 +0200
+
+pytango (7.2.0-2) unstable; urgency=low
+
+  * debian/control
+    - bump the Standards-Version to 3.9.2
+    - Build-Depends
+      + libtango7 (>= 7.2) (updated)
+      + python-all-dev  (>= 2.6.6-3~) (updated)
+      + python-setuptool (removed)
+  * debian/copyright
+    - use the right dep5 location
+  * Install the spock profile also for python2.7 Thanks Jakub Wilk for
+    the report (Closes: #632077)
+  * Update my email address since I am DD now.
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Sat, 14 May 2011 14:01:37 +0200
+
+pytango (7.2.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #614245)
+  * Thanks to Justin B Rye for package description review
+
+ -- Picca Frédéric-Emmanuel <picca@synchrotron-soleil.fr>  Mon, 09 Aug 2010 11:26:05 +0200

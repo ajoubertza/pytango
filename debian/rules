@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=tango
+export PYBUILD_AFTER_INSTALL=dh_numpy ; dh_numpy3
+
+%:
+	dh $@ --with python2,python3,sphinxdoc --buildsystem=pybuild
+
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf build
+	rm -rf *.egg-info
+	rm -rf build
+
+override_dh_sphinxdoc:
+ifeq (,$(findstring nodoc, $(DEB_BUILD_OPTIONS)))
+	PYBUILD_SYSTEM=custom \
+	PYBUILD_BUILD_ARGS="PYTHONPATH={build_dir} {interpreter} -m sphinx -N -bhtml doc build/html" dh_auto_build  # HTML generator
+	dh_installdocs "build/html" -p python-tango-doc
+	dh_installdocs "examples" -p python-tango-doc
+	dh_sphinxdoc -O--buildsystem=pybuild
+endif

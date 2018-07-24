@@ -1,0 +1,23 @@
+From: =?utf-8?q?Picca_Fr=C3=A9d=C3=A9ric-Emmanuel?=
+ <picca@synchrotron-soleil.fr>
+Date: Sat, 28 Oct 2017 18:46:04 +0200
+Subject: deal with sphinx only via the debian/rules
+
+---
+ setup.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/setup.py b/setup.py
+index 04d4247..dd05d2f 100644
+--- a/setup.py
++++ b/setup.py
+@@ -34,6 +34,9 @@ try:
+ except ImportError:
+     sphinx = None
+ 
++# let's deal with documentation in the debian/rules
++sphinx = None
++
+ # Detect numpy
+ try:
+     import numpy

@@ -1,0 +1,9 @@
+Document: pytango-manual
+Title: PyTango documentation manual
+Author: Tiago Coutinho <tcoutinho@cells.es>
+Abstract: PyTango is the Python binding of the Tango Control System C++ libraries.
+Section: Text
+
+Format: HTML
+Index: /usr/share/doc/python-tango-doc/html/index.html
+Files: /usr/share/doc/python-tango-doc/html/*

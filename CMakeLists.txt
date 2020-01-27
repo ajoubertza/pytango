@@ -142,6 +142,7 @@ include_directories(${PROJECT_NAME} PUBLIC "$ENV{BOOST_ROOT}/include/boost-${BOO
 include_directories(${PROJECT_NAME} PUBLIC "$ENV{PYTHON_ROOT}/include")
 include_directories(${PROJECT_NAME} PUBLIC "$ENV{TANGO_ROOT}/include")
 include_directories(${PROJECT_NAME} PUBLIC "$ENV{PYTHON_ROOT}/Lib/site-packages/numpy/core/include")
+include_directories(${PROJECT_NAME} PUBLIC "$ENV{PTHREAD_WIN}/include")
 link_directories("$ENV{TANGO_ROOT}/bin")
 link_directories("$ENV{TANGO_ROOT}/lib")
 link_directories("$ENV{PYTHON_ROOT}/libs")

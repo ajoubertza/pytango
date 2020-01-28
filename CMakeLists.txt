@@ -21,15 +21,20 @@ add_definitions(-DZMQ_STATIC)
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
   set(PY_TARGET "64")
   add_definitions(-D_64BITS)
-  if(MSVC14)
-    add_definitions(-D_TIMERS_T_)
-  endif(MSVC14)
 elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
   set(PY_TARGET "32")
   add_definitions(-DJPG_USE_ASM)
 else(CMAKE_SIZEOF_VOID_P EQUAL 8)
   message(FATAL_ERROR "Unknown architecture - aborting!")
 endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
+
+if(MSVC14)
+    add_definitions(-D_TIMERS_T_)
+    add_definitions(-DHAVE_STRUCT_TIMESPEC)
+    add_definitions(-D_TIMESPEC_DEFINED)
+    add_definitions(-DSTRUCT_TIMESPEC_HAS_TV_SEC)
+    add_definitions(-DSTRUCT_TIMESPEC_HAS_TV_NSEC)
+endif(MSVC14)
 
 set(SOURCES
         ext/api_util.cpp

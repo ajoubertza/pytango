@@ -8,15 +8,15 @@ environment:
   boost_download_base: https://github.com/tango-controls/boost-ci/releases/download/
   boost_version: 1.70.0
   matrix:
-    - platform: win32
-      configuration: Release
-      ARCH: win32-msvc9
-      ARCH_PY: win32-msvc9-py27
-      VC_VER: 9.0
-      MSVCVERSION: v90
-      PYTHON_VER: 27
-      PYTHON_ROOT: c:\Python27\
-      CMAKE_GENERATOR: "Visual Studio 9 2008"
+    # - platform: win32
+    #   configuration: Release
+    #   ARCH: win32-msvc9
+    #   ARCH_PY: win32-msvc9-py27
+    #   VC_VER: 9.0
+    #   MSVCVERSION: v90
+    #   PYTHON_VER: 27
+    #   PYTHON_ROOT: c:\Python27\
+    #   CMAKE_GENERATOR: "Visual Studio 9 2008"
     - platform: x64
       configuration: Release
       ARCH: x64-msvc9
@@ -27,34 +27,34 @@ environment:
       PYTHON_ROOT: c:\Python27-x64\
       CMAKE_GENERATOR: "Visual Studio 9 2008 Win64"
 
-    - platform: win32
-      configuration: Release
-      ARCH: win32-msvc14
-      ARCH_PY: win32-msvc14-py36
-      VC_VER: 14.0
-      MSVCVERSION: v140
-      PYTHON_VER: 36
-      PYTHON_ROOT: c:\Python36\
-      CMAKE_GENERATOR: "Visual Studio 14 2015"
-    - platform: x64
-      configuration: Release
-      ARCH: x64-msvc14
-      ARCH_PY: x64-msvc14-py36
-      VC_VER: 14.0
-      MSVCVERSION: v140
-      PYTHON_VER: 36
-      PYTHON_ROOT: c:\Python36-x64\
-      CMAKE_GENERATOR: "Visual Studio 14 2015 Win64"
-
-    - platform: win32
-      configuration: Release
-      ARCH: win32-msvc14
-      ARCH_PY: win32-msvc14-py37
-      VC_VER: 14.0
-      MSVCVERSION: v140
-      PYTHON_VER: 37
-      PYTHON_ROOT: c:\Python37\
-      CMAKE_GENERATOR: "Visual Studio 14 2015"
+    # - platform: win32
+    #   configuration: Release
+    #   ARCH: win32-msvc14
+    #   ARCH_PY: win32-msvc14-py36
+    #   VC_VER: 14.0
+    #   MSVCVERSION: v140
+    #   PYTHON_VER: 36
+    #   PYTHON_ROOT: c:\Python36\
+    #   CMAKE_GENERATOR: "Visual Studio 14 2015"
+    # - platform: x64
+    #   configuration: Release
+    #   ARCH: x64-msvc14
+    #   ARCH_PY: x64-msvc14-py36
+    #   VC_VER: 14.0
+    #   MSVCVERSION: v140
+    #   PYTHON_VER: 36
+    #   PYTHON_ROOT: c:\Python36-x64\
+    #   CMAKE_GENERATOR: "Visual Studio 14 2015 Win64"
+    #
+    # - platform: win32
+    #   configuration: Release
+    #   ARCH: win32-msvc14
+    #   ARCH_PY: win32-msvc14-py37
+    #   VC_VER: 14.0
+    #   MSVCVERSION: v140
+    #   PYTHON_VER: 37
+    #   PYTHON_ROOT: c:\Python37\
+    #   CMAKE_GENERATOR: "Visual Studio 14 2015"
     - platform: x64
       configuration: Release
       ARCH: x64-msvc14
@@ -85,7 +85,7 @@ init:
   - appveyor DownloadFile %boost_download_base%/%boost_version%/boost-python-%boost_version%_%ARCH%_py%PYTHON_VER%.zip
   - cmd: 7z -y x boost-python-%boost_version%_%ARCH%_py%PYTHON_VER%.zip -oC:\projects\
 
-  #Pthread-Win32
+  #Pthread-Win32 (note: we just need the include files, since library is in libtango download)
   - cmd: cd "C:\projects\"
   - cmd: md pthreads-win32
   - cmd: cd "C:\projects\"
